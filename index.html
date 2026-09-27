@@ -4,6 +4,118 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pinjam Barangs</title>
+    <link rel="stylesheet" href="style/style.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Pinjam Barangs</h1>
+      <p>Platform Peminjaman Barang antara mahasiswa dengan mudah dan cepat</p>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tambah-barang.html">Pinjam Barang</a></li>
+          <li><a href="detail-barang.html">Detail Barang</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Cari Barang</h2>
+        <form action="index.html" method="get">
+          <label for="search-input">Kata Kunci:</label>
+          <input
+            type="text"
+            id="search-input"
+            name="q"
+            placeholder="Cari proyektor, tripod..."
+          />
+
+          <label for="category-select">Kategori:</label>
+          <select id="category-select" name="category">
+            <option value="">Semua Kategori</option>
+            <option value="elektronik">Elektronik & Media</option>
+            <option value="praktikum">Alat Praktikum</option>
+            <option value="event">Peralatan Event</option>
+          </select>
+
+          <button type="submit">Cari</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Barang Tersedia</h2>
+
+        <!-- Artikel Item 1 -->
+        <article>
+          <img src="" alt="Foto Proyektor Epson EB-X400 berwarna putih" />
+          <h3>Proyektor Epson EB-X400</h3>
+          <p><strong>Kategori:</strong> Elektronik & Media</p>
+          <p><strong>Pemilik:</strong> Rakendra (Teknik Informatika)</p>
+          <p>
+            Proyektor tingkat terang tinggi, cocok untuk presentasi atau nonton
+            bareng.
+          </p>
+          <p><a href="detail-barang.html">Lihat Detail & Pinjam</a></p>
+        </article>
+
+        <!-- Artikel Item 2 -->
+        <article>
+          <img src="" alt="Foto Tripod Kamera Takara ukuran standar hitam" />
+          <h3>Tripod Kamera Takara</h3>
+          <p><strong>Kategori:</strong> Peralatan Event</p>
+          <p><strong>Pemilik:</strong> Andi (Sistem Informasi)</p>
+          <p>
+            Tripod kokoh untuk kebutuhan dokumentasi atau pemotretan tugas
+            kuliah.
+          </p>
+          <p><a href="detail-barang.html">Lihat Detail & Pinjam</a></p>
+        </article>
+      </section>
+
+      <!-- Tabel Data Tabular (Ketentuan Peminjaman Publik) -->
+      <section>
+        <h2>Ketentuan Umum Peminjaman</h2>
+        <table border="1">
+          <caption>
+            Aturan Durasi dan Syarat Jaminan Menurut Kategori Barang
+          </caption>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Kategori Barang</th>
+              <th>Maksimal Durasi Pinjam</th>
+              <th>Syarat Jaminan Utama</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Peralatan Event & Media</td>
+              <td>3 Hari</td>
+              <td>KTM Asli / KTP</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Elektronik & Proyektor</td>
+              <td>2 Hari</td>
+              <td>KTM Asli + Kontak Penanggung Jawab</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Alat Praktikum</td>
+              <td>7 Hari</td>
+              <td>KTM Asli</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 PinjamBarang - Proyek Perkuliahan Web Development</p>
+    </footer>
+    <script src="script/app.js"></script>
+  </body>
 </html>
