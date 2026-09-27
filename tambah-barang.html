@@ -1,9 +1,107 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PinjamBarangs - Tawarkan Barang</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>PinjamBarangs</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda / Katalog</a></li>
+          <li><a href="tambah-barang.html">Tawarkan Barang</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Formulir Penawaran Barang Baru</h2>
+        <p>
+          Isi formulir di bawah ini untuk meminjamkan barang Anda kepada
+          mahasiswa lain.
+        </p>
+
+        <form action="#" method="POST" enctype="multipart/form-data">
+          <p>
+            <label for="item-name">Nama Barang:</label><br />
+            <input
+              type="text"
+              id="item-name"
+              name="item_name"
+              placeholder="Contoh: Microphone Wireless Clip-on"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="item-category">Kategori Barang:</label><br />
+            <select id="item-category" name="item_category" required>
+              <option value="">-- Pilih Kategori --</option>
+              <option value="elektronik">Elektronik & Media</option>
+              <option value="praktikum">Alat Praktikum</option>
+              <option value="event">Peralatan Event</option>
+              <option value="lainnya">Lain-lain</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="item-condition">Kondisi Barang:</label><br />
+            <select id="item-condition" name="item_condition" required>
+              <option value="sangat_baik">Sangat Baik (Seperti Baru)</option>
+              <option value="baik">Baik (Berfungsi Normal)</option>
+              <option value="cukup">Cukup (Ada lecet pemakaian)</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="item-deposit">Syarat Jaminan Peminjaman:</label><br />
+            <input
+              type="text"
+              id="item-deposit"
+              name="item_deposit"
+              placeholder="Contoh: KTM Asli / Jaminan Uang Rp 50.000"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="item-image">Unggah Foto Barang:</label><br />
+            <input
+              type="file"
+              id="item-image"
+              name="item_image"
+              accept="image/*"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="item-description">Deskripsi Lengkap Barang:</label
+            ><br />
+            <textarea
+              id="item-description"
+              name="item_description"
+              rows="5"
+              cols="50"
+              placeholder="Jelaskan spesifikasi, kelengkapan, dan aturan penggunaan barang..."
+            ></textarea>
+          </p>
+
+          <p>
+            <button type="submit">Simpan & Publikasikan Barang</button>
+            <button type="reset">Batalkan / Reset Form</button>
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 PinjamBarang - Proyek Perkuliahan Web Development</p>
+    </footer>
+    <script src="script/app.js"></script>
+  </body>
 </html>
