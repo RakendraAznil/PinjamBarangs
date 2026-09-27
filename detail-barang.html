@@ -3,7 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PinjamBarangs - Detail Barang</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>PinjamBarangs</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda / Katalog</a></li>
+          <li><a href="tambah-barang.html">Tawarkan Barang</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <h2>Detail Barang: Proyektor Epson EB-X400</h2>
+        <img
+          src=""
+          alt="Foto detail Proyektor Epson EB-X400 tampak depan beserta kabel HDMI"
+        />
+
+        <section>
+          <h3>Informasi Spesifikasi</h3>
+          <table border="1">
+            <tbody>
+              <tr>
+                <th>Status Ketersediaan</th>
+                <td>Tersedia</td>
+              </tr>
+              <tr>
+                <th>Kondisi Barang</th>
+                <td>Sangat Baik (Lengkap Kabel VGA & HDMI)</td>
+              </tr>
+              <tr>
+                <th>Pemilik</th>
+                <td>Rakendra Aznil</td>
+              </tr>
+              <tr>
+                <th>Syarat Jaminan</th>
+                <td>KTM Asli / KTP</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h3>Deskripsi Barang</h3>
+          <p>
+            Proyektor Epson EB-X400 dengan resolusi XGA. Sangat cocok digunakan
+            untuk kegiatan organisasi, presentasi Tugas Akhir, atau acara nonton
+            bareng. Dilengkapi dengan tas pelindung dan remote kontrol.
+          </p>
+        </section>
+
+        <!-- Form Ajukan Peminjaman -->
+        <section>
+          <h3>Form Pengajuan Peminjaman</h3>
+          <form action="#" method="POST">
+            <p>
+              <label for="borrower-name">Nama Lengkap Peminjam:</label><br />
+              <input
+                type="text"
+                id="borrower-name"
+                name="borrower_name"
+                required
+              />
+            </p>
+
+            <p>
+              <label for="borrower-nim">NIM / ID Identitas:</label><br />
+              <input
+                type="text"
+                id="borrower-nim"
+                name="borrower_nim"
+                required
+              />
+            </p>
+
+            <p>
+              <label for="start-date">Tanggal Mulai Pinjam:</label><br />
+              <input type="date" id="start-date" name="start_date" required />
+            </p>
+
+            <p>
+              <label for="end-date">Tanggal Selesai Pinjam:</label><br />
+              <input type="date" id="end-date" name="end_date" required />
+            </p>
+
+            <p>
+              <label for="note">Tujuan Peminjaman & Catatan:</label><br />
+              <textarea
+                id="note"
+                name="note"
+                rows="4"
+                cols="50"
+                placeholder="Jelaskan kebutuhan peminjaman barang..."
+              ></textarea>
+            </p>
+
+            <p>
+              <button type="submit">Kirim Pengajuan Pinjaman</button>
+            </p>
+          </form>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 PinjamBarang - Proyek Perkuliahan Web Development</p>
+    </footer>
+    <script src="script/app.js"></script>
+  </body>
 </html>
