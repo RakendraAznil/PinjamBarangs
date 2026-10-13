@@ -4,124 +4,186 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PinjamBarangs</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body class="bg-light">
     <header>
-      <h1>PinjamBarangs</h1>
-      <p>Platform Peminjaman Barang antara mahasiswa dengan mudah dan cepat</p>
-      <nav>
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="tambah-barang.html">Pinjam Barang</a></li>
-          <li><a href="detail-barang.html">Detail Barang</a></li>
-        </ul>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="index.html">PinjamBarang</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Beranda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tambah-barang.html"
+                  >Tawarkan Barang</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="detail-barang.html">Detail & Form</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
 
-    <main>
-      <section>
-        <h2>Cari Barang</h2>
-        <form action="index.html" method="get">
-          <label for="search-input">Kata Kunci:</label>
-          <input
-            type="text"
-            id="search-input"
-            name="q"
-            placeholder="Cari proyektor, tripod..."
-          />
-
-          <label for="category-select">Kategori:</label>
-          <select id="category-select" name="category">
-            <option value="">Semua Kategori</option>
-            <option value="elektronik">Elektronik & Media</option>
-            <option value="praktikum">Alat Praktikum</option>
-            <option value="event">Peralatan Event</option>
-          </select>
-
-          <button type="submit">Cari</button>
+    <main class="container my-4">
+      <section class="card shadow-sm p-4 mb-4">
+        <h2 class="h4 text-primary mb-3">Cari Barang</h2>
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="search" class="form-label">Kata Kunci</label>
+            <input
+              type="text"
+              class="form-control"
+              id="search"
+              placeholder="Cari proyektor, tripod..."
+            />
+          </div>
+          <div class="col-md-4">
+            <label for="category" class="form-label">Kategori</label>
+            <select id="category" class="form-select">
+              <option value="">Semua Kategori</option>
+              <option value="elektronik">Elektronik & Media</option>
+              <option value="praktikum">Alat Praktikum</option>
+            </select>
+          </div>
+          <div class="col-md-2 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">Cari</button>
+          </div>
         </form>
       </section>
 
-      <section>
-        <h2>Barang Tersedia</h2>
+      <section class="mb-5">
+        <h2 class="h4 text-primary mb-3">Barang Tersedia</h2>
+        <!-- Barang Tersedia -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <!-- Item 1 -->
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+               
+              <img
+                src="https://tokocentralpc.com/wp-content/uploads/2024/10/Untitled-222.jpg"
+                class="card-img-top"
+                style="height: 200px; object-fit: cover"
+                alt="Proyektor Epson"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Proyektor Epson EB-X400</h5>
+                <p class="card-text text-muted small">
+                  Proyektor tingkat terang tinggi, cocok untuk presentasi atau
+                  nonton bareng.
+                </p>
+                <a
+                  href="detail-barang.html"
+                  class="btn btn-outline-primary btn-sm mt-auto"
+                  >Lihat Detail</a
+                >
+              </div>
+            </div>
+          </div>
 
-        <!-- Artikel Item 1 -->
-        <article>
-          <img
-            src="https://tokocentralpc.com/wp-content/uploads/2024/10/Untitled-222.jpg"
-            alt="Foto Proyektor Epson EB-X400 berwarna putih"
-          />
-          <h3>Proyektor Epson EB-X400</h3>
-          <p><strong>Kategori:</strong> Elektronik & Media</p>
-          <p><strong>Pemilik:</strong> Rakendra (Teknik Informatika)</p>
-          <p>
-            Proyektor tingkat terang tinggi, cocok untuk presentasi atau nonton
-            bareng.
-          </p>
-          <p><a href="detail-barang.html">Lihat Detail & Pinjam</a></p>
-        </article>
+          <!-- Item 2 -->
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="https://static.wixstatic.com/media/2ed629_8c7450a8b942422083c01ad045fb868e~mv2.jpg/v1/fill/w_744,h_744,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2ed629_8c7450a8b942422083c01ad045fb868e~mv2.jpg"
+                class="card-img-top"
+                style="height: 200px; object-fit: cover"
+                alt="Tripod Kamera"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Tripod Kamera Takara</h5>
+                <p class="card-text text-muted small">
+                  Tripod kokoh untuk kebutuhan dokumentasi atau pemotretan tugas
+                  kuliah.
+                </p>
+                <a
+                  href="detail-barang.html"
+                  class="btn btn-outline-primary btn-sm mt-auto"
+                  >Lihat Detail</a
+                >
+              </div>
+            </div>
+          </div>
 
-        <!-- Artikel Item 2 -->
-        <article>
-          <img
-            src="https://static.wixstatic.com/media/2ed629_8c7450a8b942422083c01ad045fb868e~mv2.jpg/v1/fill/w_744,h_744,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2ed629_8c7450a8b942422083c01ad045fb868e~mv2.jpg"
-            alt="Foto Tripod Kamera Takara ukuran standar hitam"
-          />
-          <h3>Tripod Kamera Takara</h3>
-          <p><strong>Kategori:</strong> Peralatan Event</p>
-          <p><strong>Pemilik:</strong> Andi (Sistem Informasi)</p>
-          <p>
-            Tripod kokoh untuk kebutuhan dokumentasi atau pemotretan tugas
-            kuliah.
-          </p>
-          <p><a href="detail-barang.html">Lihat Detail & Pinjam</a></p>
-        </article>
+          <!-- Item 3 -->
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=500&q=80"
+                class="card-img-top"
+                style="height: 200px; object-fit: cover"
+                alt="Wireless Microphone"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Wireless Microphone</h5>
+                <p class="card-text text-muted small">
+                  Mikrofon jernih untuk keperluan seminar atau presentasi
+                  kampus.
+                </p>
+                <a
+                  href="detail-barang.html"
+                  class="btn btn-outline-primary btn-sm mt-auto"
+                  >Lihat Detail</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Tabel Data Tabular (Ketentuan Peminjaman Publik) -->
-      <section>
-        <h2>Ketentuan Umum Peminjaman</h2>
-        <table border="1">
-          <caption>
-            Aturan Durasi dan Syarat Jaminan Menurut Kategori Barang
-          </caption>
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Kategori Barang</th>
-              <th>Maksimal Durasi Pinjam</th>
-              <th>Syarat Jaminan Utama</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Peralatan Event & Media</td>
-              <td>3 Hari</td>
-              <td>KTM Asli / KTP</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Elektronik & Proyektor</td>
-              <td>2 Hari</td>
-              <td>KTM Asli + Kontak Penanggung Jawab</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Alat Praktikum</td>
-              <td>7 Hari</td>
-              <td>KTM Asli</td>
-            </tr>
-          </tbody>
-        </table>
+      <section class="card shadow-sm p-4">
+        <h2 class="h4 text-primary mb-3">Ketentuan Peminjaman</h2>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered align-middle">
+            <thead class="table-primary">
+              <tr>
+                <th>No</th>
+                <th>Kategori Barang</th>
+                <th>Maksimal Durasi</th>
+                <th>Jaminan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Elektronik & Media</td>
+                <td>2 Hari</td>
+                <td>KTM Asli</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Peralatan Event</td>
+                <td>3 Hari</td>
+                <td>KTM Asli / KTP</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-      <p>&copy; 2026 PinjamBarang - Proyek Perkuliahan Web Development</p>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+      <p class="mb-0">&copy; 2026 PinjamBarang - Proyek Fullstack Web</p>
     </footer>
     <script src="script/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
