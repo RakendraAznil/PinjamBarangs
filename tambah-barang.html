@@ -9,103 +9,117 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <header>
-      <h1>PinjamBarangs</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Beranda / Katalog</a></li>
-          <li><a href="tambah-barang.html">Tawarkan Barang</a></li>
-        </ul>
-      </nav>
-    </header>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">PinjamBarang</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="tambah-barang.html">Tawarkan Barang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="detail-barang.html">Detail & Form</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <main>
-      <section>
-        <h2>Formulir Penawaran Barang Baru</h2>
-        <p>
-          Isi formulir di bawah ini untuk meminjamkan barang Anda kepada
-          mahasiswa lain.
-        </p>
+    <main class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card shadow-sm p-4">
+            <h2 class="h3 text-primary mb-3">Formulir Penawaran Barang</h2>
+            <p class="text-muted mb-4">
+              Bagikan barang tidak terpakai Anda agar bisa dimanfaatkan
+              mahasiswa lain.
+            </p>
 
-        <form action="#" method="POST" enctype="multipart/form-data">
-          <p>
-            <label for="item-name">Nama Barang:</label><br />
-            <input
-              type="text"
-              id="item-name"
-              name="item_name"
-              placeholder="Contoh: Microphone Wireless Clip-on"
-              required
-            />
-          </p>
+            <form>
+              <div class="mb-3">
+                <label for="itemName" class="form-label">Nama Barang</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="itemName"
+                  placeholder="Contoh: Kabel Roll / Infocus"
+                  required
+                />
+              </div>
 
-          <p>
-            <label for="item-category">Kategori Barang:</label><br />
-            <select id="item-category" name="item_category" required>
-              <option value="">-- Pilih Kategori --</option>
-              <option value="elektronik">Elektronik & Media</option>
-              <option value="praktikum">Alat Praktikum</option>
-              <option value="event">Peralatan Event</option>
-              <option value="lainnya">Lain-lain</option>
-            </select>
-          </p>
+              <div class="mb-3">
+                <label for="itemCategory" class="form-label">Kategori</label>
+                <select id="itemCategory" class="form-select" required>
+                  <option value="">Pilih Kategori...</option>
+                  <option value="elektronik">Elektronik & Media</option>
+                  <option value="praktikum">Alat Praktikum</option>
+                  <option value="event">Peralatan Event</option>
+                </select>
+              </div>
 
-          <p>
-            <label for="item-condition">Kondisi Barang:</label><br />
-            <select id="item-condition" name="item_condition" required>
-              <option value="sangat_baik">Sangat Baik (Seperti Baru)</option>
-              <option value="baik">Baik (Berfungsi Normal)</option>
-              <option value="cukup">Cukup (Ada lecet pemakaian)</option>
-            </select>
-          </p>
+              <div class="mb-3">
+                <label for="itemDeposit" class="form-label"
+                  >Syarat Jaminan</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="itemDeposit"
+                  placeholder="Contoh: KTM Asli"
+                  required
+                />
+              </div>
 
-          <p>
-            <label for="item-deposit">Syarat Jaminan Peminjaman:</label><br />
-            <input
-              type="text"
-              id="item-deposit"
-              name="item_deposit"
-              placeholder="Contoh: KTM Asli / Jaminan Uang Rp 50.000"
-              required
-            />
-          </p>
+              <div class="mb-3">
+                <label for="itemImage" class="form-label"
+                  >Unggah Foto Barang</label
+                >
+                <input
+                  type="file"
+                  class="form-control"
+                  id="itemImage"
+                  accept="image/*"
+                  required
+                />
+              </div>
 
-          <p>
-            <label for="item-image">Unggah Foto Barang:</label><br />
-            <input
-              type="file"
-              id="item-image"
-              name="item_image"
-              accept="image/*"
-              required
-            />
-          </p>
+              <div class="mb-3">
+                <label for="itemDesc" class="form-label"
+                  >Deskripsi & Kelengkapan</label
+                >
+                <textarea
+                  class="form-control"
+                  id="itemDesc"
+                  rows="4"
+                  placeholder="Jelaskan kondisi dan aturan pinjam..."
+                ></textarea>
+              </div>
 
-          <p>
-            <label for="item-description">Deskripsi Lengkap Barang:</label
-            ><br />
-            <textarea
-              id="item-description"
-              name="item_description"
-              rows="5"
-              cols="50"
-              placeholder="Jelaskan spesifikasi, kelengkapan, dan aturan penggunaan barang..."
-            ></textarea>
-          </p>
-
-          <p>
-            <button type="submit">Simpan & Publikasikan Barang</button>
-            <button type="reset">Batalkan / Reset Form</button>
-          </p>
-        </form>
-      </section>
+              <button type="submit" class="btn btn-primary w-100 py-2">
+                Publikasikan Barang
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <footer>
-      <p>&copy; 2026 PinjamBarang - Proyek Perkuliahan Web Development</p>
+    <footer class="bg-dark text-white text-center py-3">
+      <p class="mb-0">&copy; 2026 PinjamBarang</p>
     </footer>
-    <script src="script/app.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
