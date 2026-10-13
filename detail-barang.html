@@ -9,115 +9,176 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <header>
-      <h1>PinjamBarangs</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Beranda / Katalog</a></li>
-          <li><a href="tambah-barang.html">Tawarkan Barang</a></li>
-        </ul>
-      </nav>
-    </header>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">PinjamBarang</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tambah-barang.html">Tawarkan Barang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="detail-barang.html"
+                >Detail & Form</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <main>
-      <article>
-        <h2>Detail Barang: Proyektor Epson EB-X400</h2>
-        <img
-          src="https://tokocentralpc.com/wp-content/uploads/2024/10/Untitled-222.jpg"
-          alt="Foto detail Proyektor Epson EB-X400 tampak depan beserta kabel HDMI"
-        />
+    <main class="container my-5">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card shadow-sm p-4 h-100">
+            <h2 class="h4 text-primary mb-3">Proyektor Epson EB-X400</h2>
 
-        <section>
-          <h3>Informasi Spesifikasi</h3>
-          <table border="1">
-            <tbody>
-              <tr>
-                <th>Status Ketersediaan</th>
-                <td><span class="status-badge">Tersedia</span></td>
-              </tr>
-              <tr>
-                <th>Kondisi Barang</th>
-                <td>Sangat Baik (Lengkap Kabel VGA & HDMI)</td>
-              </tr>
-              <tr>
-                <th>Pemilik</th>
-                <td>Rakendra Aznil</td>
-              </tr>
-              <tr>
-                <th>Syarat Jaminan</th>
-                <td>KTM Asli / KTP</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+            <img
+              src="https://tokocentralpc.com/wp-content/uploads/2024/10/Untitled-222.jpg"
+              class="img-fluid rounded mb-4"
+              style="height: 250px; object-fit: cover; width: 100%"
+              alt="Foto detail Proyektor Epson EB-X400"
+            />
 
-        <section>
-          <h3>Deskripsi Barang</h3>
-          <p>
-            Proyektor Epson EB-X400 dengan resolusi XGA. Sangat cocok digunakan
-            untuk kegiatan organisasi, presentasi Tugas Akhir, atau acara nonton
-            bareng. Dilengkapi dengan tas pelindung dan remote kontrol.
-          </p>
-        </section>
+            <h3 class="h5 text-primary mb-3">Informasi Spesifikasi</h3>
+            <div class="table-responsive mb-4">
+              <table class="table table-bordered align-middle">
+                <tbody>
+                  <tr>
+                    <th class="w-50">Status Ketersediaan</th>
+                    <td><span class="badge bg-success">Tersedia</span></td>
+                  </tr>
+                  <tr>
+                    <th>Kondisi Barang</th>
+                    <td>Sangat Baik (Lengkap Kabel VGA & HDMI)</td>
+                  </tr>
+                  <tr>
+                    <th>Pemilik</th>
+                    <td>Rakendra Aznil</td>
+                  </tr>
+                  <tr>
+                    <th>Syarat Jaminan</th>
+                    <td>KTM Asli / KTP</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-        <!-- Form Ajukan Peminjaman -->
-        <section>
-          <h3>Form Pengajuan Peminjaman</h3>
-          <form action="#" method="POST">
-            <p>
-              <label for="borrower-name">Nama Lengkap Peminjam:</label><br />
-              <input
-                type="text"
-                id="borrower-name"
-                name="borrower_name"
-                required
-              />
+            <h3 class="h5 text-primary mb-2">Deskripsi Barang</h3>
+            <p class="text-muted">
+              Proyektor Epson EB-X400 dengan resolusi XGA. Sangat cocok
+              digunakan untuk kegiatan organisasi, presentasi Tugas Akhir, atau
+              acara nonton bareng. Dilengkapi dengan tas pelindung dan remote
+              kontrol.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card shadow-sm p-4 h-100">
+            <h3 class="h4 text-primary mb-3">Form Pengajuan Peminjaman</h3>
+            <p class="text-muted small mb-4">
+              Silakan lengkapi formulir di bawah ini untuk mengajukan peminjaman
+              barang kepada pemilik.
             </p>
 
-            <p>
-              <label for="borrower-nim">NIM / ID Identitas:</label><br />
-              <input
-                type="text"
-                id="borrower-nim"
-                name="borrower_nim"
-                required
-              />
-            </p>
+            <form action="#" method="POST">
+              <div class="mb-3">
+                <label for="borrower-name" class="form-label"
+                  >Nama Lengkap Peminjam</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="borrower-name"
+                  name="borrower_name"
+                  placeholder="Masukkan nama lengkap"
+                  required
+                />
+              </div>
 
-            <p>
-              <label for="start-date">Tanggal Mulai Pinjam:</label><br />
-              <input type="date" id="start-date" name="start_date" required />
-            </p>
+              <div class="mb-3">
+                <label for="borrower-nim" class="form-label"
+                  >NIM / ID Identitas</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="borrower-nim"
+                  name="borrower_nim"
+                  placeholder="Contoh: 103022400092"
+                  required
+                />
+              </div>
 
-            <p>
-              <label for="end-date">Tanggal Selesai Pinjam:</label><br />
-              <input type="date" id="end-date" name="end_date" required />
-            </p>
+              <div class="mb-3">
+                <label for="start-date" class="form-label"
+                  >Tanggal Mulai Pinjam</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="start-date"
+                  name="start_date"
+                  required
+                />
+              </div>
 
-            <p>
-              <label for="note">Tujuan Peminjaman & Catatan:</label><br />
-              <textarea
-                id="note"
-                name="note"
-                rows="4"
-                cols="50"
-                placeholder="Jelaskan kebutuhan peminjaman barang..."
-              ></textarea>
-            </p>
+              <div class="mb-3">
+                <label for="end-date" class="form-label"
+                  >Tanggal Selesai Pinjam</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="end-date"
+                  name="end_date"
+                  required
+                />
+              </div>
 
-            <p>
-              <button type="submit">Kirim Pengajuan Pinjaman</button>
-            </p>
-          </form>
-        </section>
-      </article>
+              <div class="mb-3">
+                <label for="note" class="form-label"
+                  >Tujuan Peminjaman & Catatan</label
+                >
+                <textarea
+                  class="form-control"
+                  id="note"
+                  name="note"
+                  rows="4"
+                  placeholder="Jelaskan kebutuhan peminjaman barang..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100 py-2">
+                Kirim Pengajuan Pinjaman
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <footer>
-      <p>&copy; 2026 PinjamBarang - Proyek Perkuliahan Web Development</p>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+      <p class="mb-0">
+        &copy; 2026 PinjamBarang - Proyek Perkuliahan Web Development
+      </p>
     </footer>
-    <script src="script/app.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
