@@ -1,21 +1,21 @@
 const dummyData = [
   {
     id: 1,
-    name: "Proyektor Epson EB-X400",
+    nama: "Proyektor Epson EB-X400",
     kategori: "Elektronik",
-    kategoriLabel: "Elektronik",
+    kategoriLabel: "Elektronik & Media",
     pemilik: "Rakendra Aznil",
     deskripsi:
       "Proyektor Epson EB-X400 adalah proyektor berkualitas tinggi yang cocok untuk presentasi bisnis dan pendidikan.",
     gambar:
-      "https://static.wixstatic.com/media/2ed629_8c7450a8b942422083c01ad045fb868e~mv2.jpg/v1/fill/w_744,h_744,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2ed629_8c7450a8b942422083c01ad045fb868e~mv2.jpg",
+      "https://tokocentralpc.com/wp-content/uploads/2024/10/Untitled-222.jpg",
     status: true,
   },
   {
     id: 2,
-    name: "Tripod Kamera Takara",
+    nama: "Tripod Kamera Takara",
     kategori: "Elektronik",
-    kategoriLabel: "Elektronik",
+    kategoriLabel: "Elektronik & Media",
     pemilik: "Rakendra Aznil",
     deskripsi:
       "Tripod Kamera Takara adalah tripod yang stabil dan ringan, cocok untuk fotografi dan videografi.",
@@ -25,9 +25,9 @@ const dummyData = [
   },
   {
     id: 3,
-    name: "Wireless Microphone",
+    nama: "Wireless Microphone",
     kategori: "Elektronik",
-    kategoriLabel: "Elektronik",
+    kategoriLabel: "Elektronik & Media",
     pemilik: "Rakendra Aznil",
     deskripsi:
       "Wireless Microphone adalah mikrofon yang dapat digunakan tanpa kabel, cocok untuk keperluan seminar dan presentasi.",
@@ -55,7 +55,7 @@ function renderItems(items) {
   }
 
   items.forEach((item) => {
-    const statusBadge = item.tersedia
+    const statusBadge = item.status
       ? '<span class="badge bg-success position-absolute top-0 end-0 m-2">Tersedia</span>'
       : '<span class="badge bg-secondary position-absolute top-0 end-0 m-2">Dipinjam</span>';
 
@@ -79,8 +79,75 @@ function renderItems(items) {
 
 function filterBarang(keyword, kategori) {
   return dummyData.filter((item) => {
-    const matchesKeyword = item.nama.toLowerCase().includes(keyword.toLowerCase());
-    const matchesKategori = kategori === '' || item.kategori === kategori;
+    const matchesKeyword = item.nama
+      .toLowerCase()
+      .includes(keyword.toLowerCase());
+    const matchesKategori = kategori === "" || item.kategori === kategori;
     return matchesKeyword && matchesKategori;
   });
 }
+
+$(document).ready(function () {
+  renderItems(dummyData);
+
+  $("#form-search").on("submit", function (e) {
+    e.preventDefault();
+    const keyword = $("#search-input").val().trim();
+    const kategori = $("#category-select").val();
+
+    const filteredItems = filterBarang(keyword, kategori);
+
+    $("#katalog-container").fadeOut(200, function () {
+      renderItems(filteredItems);
+      $(this).fadeIn(200);
+    });
+  });
+
+  $("#btn-toggle-info").on("click", function () {
+    $("#panel-info-ketentuan").slideToggle(300);
+  });
+
+  $("#form-tambah-barang, #form-pinjam-barang").on("submit", function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+    let errrorMessage = "";
+
+    $(this)
+      .find("input[required], select[required], textarea[required]")
+      .each(function () {
+        if ($(this).val().trim() === "") {
+          isValid = false;
+          $(this).addClass("is-invalid");
+        } else {
+          $(this).removeClass("is-invalid");
+        }
+      });
+
+    if (!isValid) {
+      $("#alert-notif")
+        .removeClass("d-none alert-success")
+        .addClass("alert-danger")
+        .html(
+          `<strong>Gagal!</strong> Mohon lengkapi semua field yang wajib diisi.`,
+        )
+        .hide()
+        .fadeIn(200);
+      return;
+    }
+
+    $("#alert-notif")
+      .removeClass("d-none alert-danger")
+      .addClass("alert-success")
+      .html(`<strong>Berhasil!</strong> Data telah disimpan.`)
+      .hide()
+      .fadeIn(200);
+
+    this.reset();
+  });
+  $("input, select, textarea").on("input change", function () {
+    if ($(this).val().trim() !== "") {
+      $(this).removeClass("is-invalid");
+    }
+  });
+});
