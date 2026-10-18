@@ -76,3 +76,11 @@ function renderItems(items) {
     $container.append(cardHtml);
   });
 }
+
+function filterBarang(keyword, kategori) {
+  return dummyData.filter((item) => {
+    const matchesKeyword = item.nama.toLowerCase().includes(keyword.toLowerCase());
+    const matchesKategori = kategori === '' || item.kategori === kategori;
+    return matchesKeyword && matchesKategori;
+  });
+}
